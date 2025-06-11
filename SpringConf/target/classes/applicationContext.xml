@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean for default constructor (len=1, wid=1, hig=1) -->
+    <bean id="box1" class="com.example.MyBox" />
+
+    <!-- Bean for single parameter constructor (len=wid=hig=5) -->
+    <bean id="box2" class="com.example.MyBox">
+        <constructor-arg value="5" />
+    </bean>
+
+    <!-- Bean for three parameter constructor (len=3, wid=4, hig=5) -->
+    <bean id="box3" class="com.example.MyBox">
+        <constructor-arg index="0" value="3" />
+        <constructor-arg index="1" value="4" />
+        <constructor-arg index="2" value="5" />
+    </bean>
+
+    <!-- Bean using setters (len=6, wid=3, hig=4) -->
+    <bean id="box4" class="com.example.MyBox">
+        <property name="len" value="6" />
+        <property name="wid" value="3" />
+        <property name="hig" value="4" />
+    </bean>
+
+</beans>
